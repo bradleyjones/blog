@@ -1,0 +1,8 @@
+baseurl = "http://yourSiteHere/"
+languageCode = "en-uk"
+title = "Caffeinated Brad"
+
+[author]
+  name = "Bradley Jones"
+  github = "bradleyjones"
+  twitter = "caffeinatedbrad"
