@@ -1,4 +1,4 @@
-baseurl = "http://yourSiteHere/"
+BaseUrl = "http://yourSiteHere/"
 languageCode = "en-uk"
 title = "Caffeinated Brad"
 
