@@ -1,4 +1,4 @@
-BaseUrl = "http://bradleyjones.github.io/"
+BaseUrl = "http://www.caffeinatedbrad.com"
 languageCode = "en-uk"
 title = "Caffeinated Brad"
 
@@ -6,3 +6,5 @@ title = "Caffeinated Brad"
   name = "Bradley Jones"
   github = "bradleyjones"
   twitter = "caffeinatedbrad"
+  email = "caffeinatedbrad@gmail.com"
+  gaID = "UA-41298595-2"
