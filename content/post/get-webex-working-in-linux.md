@@ -5,9 +5,9 @@ title = "Get WebEx working in Linux"
 
 +++
 
-Unfortunately getting WebEx running under linux isn't as simple as OSx or
+Unfortunately getting WebEx running under Linux isn't as simple as OS X or
 Windows where you can just download the browser plugin. Linux is listed on the
-Webex [support
+WebEx [support
 page](https://support.webex.com/webex/v1.1/support/en_US/rn/system_rn.htm)
 although there are a couple of limitations and missing features:
 
@@ -19,7 +19,7 @@ although there are a couple of limitations and missing features:
 
 ## Getting 32-bit Firefox and Java
 
-Obviously if your running a 32-bit OS then you can just install Firefox and Java
+Obviously if you're running a 32-bit OS then you can just install Firefox and Java
 using your favourite package manager. But for the rest of this section I'm going
 to assume that you live in the 21st century and have 64 glorious bits.
 
@@ -43,7 +43,7 @@ $ ./webex-install.sh
 ### THE SCRIPT!
 
 The script itself is pretty self explanatory, there are a few variables at the
-top of the script that can be configured to download specific versions of
+top that can be configured to download specific versions of
 Firefox and Java, by default it will use the most recent version of both at time
 of writing.
 
@@ -107,14 +107,14 @@ could cause problems.
 
 ## Configuring audio devices
 
-The WebEx client on linux doesn't expose any way to configure the audio devices
+The WebEx client on Linux doesn't expose any way to configure the audio devices
 through the UI. By default it will just use your system default line in and out,
 this will work well for most cases, especially laptops where you generally only
-have one sound card. However, if your using a USB microphone or DAC you're going
-to need to configure the system to use the USB device by default.
+have one sound card. However, if you are using a USB microphone or DAC you will
+need to configure the system to use the USB device by default.
 
 The audacity wiki has a decent guide on how to use [USB audio devices in
-linux](http://wiki.audacityteam.org/wiki/USB_mic_on_Linux) assuming you
+Linux](http://wiki.audacityteam.org/wiki/USB_mic_on_Linux) assuming you
 are using ALSA. To get it working you create `.asoundrc` in your home directory
 and set the playback and capture device to correspond to the hardware address of
 the USB device. To get the hardware address of your sound cards you can run
@@ -144,4 +144,4 @@ is my USB microphone and the playback device is the built-in sound card. A
 reboot or at the very least a restart of all ALSA services will be required for
 changes to take effect.
 
-Enjoy using WebEx on linux :)
+Enjoy using WebEx on Linux :)
