@@ -1,0 +1,28 @@
+#!/bin/bash
+
+NAME=blog
+DIR=~/src/blog/
+
+tmux has-session -t $NAME
+if [ $? != 0 ]
+then
+  cd $DIR
+  tmux new-session -s $NAME -n server -d
+    tmux send-keys -t $NAME "cd $DIR" C-m
+    tmux send-keys -t $NAME "hugo server -t nofancy -w -D --bind 10.0.0.1 -b 10.0.0.1" C-m
+
+  tmux new-window -n writing -t $NAME
+    tmux send-keys -t $NAME:2 "cd $DIR" C-m
+    tmux send-keys -t $NAME:2 "vim" C-m
+    tmux send-keys -t $NAME:2 "\e"
+    tmux split-window -l 2 -t $NAME:2 -d
+    tmux send-keys -t $NAME:2.2 "clear" C-m
+    tmux send-keys -t $NAME:2.2 "hugo new post/"
+
+  tmux new-window -n git -t $NAME
+    tmux send-keys -t $NAME:3 "cd $DIR" C-m
+
+  tmux selectw -t writing
+fi
+
+tmux attach -t $NAME
