@@ -44,5 +44,22 @@ minute) and copies in your vpnc config as well as an ssh key. You can read more
 about how to build this container in the [repo
 README](https://github.com/bradleyjones/vpnc-docker).
 
-Once the container is built you can run the container, the default entry point
-is /usr/sbin/vpnc so if you were to
+Once that's built vpnc is can now run in a container but that's not very useful
+without a way to route traffic through it.
+
+Route Traffic from Host to Container through SOCKS Proxy
+========================================================
+
+This is why openssh-server is installed on the container, which is probably
+somewhat frowned upon and I'm sure there are many ways to do this but SOCKS
+Proxy is easy to set up and it's what I know so hey-ho.
+
+Automate through tmux
+=====================
+
+I want starting the container and setting up the SOCKS Proxy to be as simple as
+possible so I automated it through tmux. Automating through tmux might sound
+like a strange thing to do but I like it because how I've done it leaves me with
+a bash session inside the container for debugging anything wrong with vpnc (I
+can reconnect without having to restart the container) and also leaves me with a
+view of the SOCKS Proxy server via SSH so it's easy to restart that it needed.
