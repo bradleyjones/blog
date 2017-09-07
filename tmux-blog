@@ -26,4 +26,3 @@ then
 fi
 
 tmux attach -t $NAME
-test
